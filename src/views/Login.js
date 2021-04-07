@@ -52,7 +52,7 @@ class Login extends React.Component {
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as="h1" icon color="violet" textAlign="center">
             <Icon name="code branch" color="violet" />
-            Login to NanobeezZone
+            Login to NanoBeezZone
           </Header>
           <Form onSubmit={this.handleSubmit} size="large">
             <Segment stacked>
@@ -83,7 +83,7 @@ class Login extends React.Component {
               <Button
                 disabled={loading}
                 className={loading ? "loading" : ""}
-                color="violet"
+                color="yellow"
                 fluid
                 size="large"
               >
