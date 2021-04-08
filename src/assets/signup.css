@@ -1,0 +1,10 @@
+.ui.grid.signup-form {
+    height: 100%;
+}
+
+.signup-form #logo {
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    display: block;
+}
