@@ -8,10 +8,10 @@ import Signup from "./views/Signup";
 
 function App({theme}) {
   const history = useHistory();
-  const {currentUser} = useStore();
+  const {auth} = useStore();
   useEffect(() => {
     document.body.className = theme;
-    if (!currentUser) history.push('/login');
+    if (!auth) history.push('/login');
   });
   return (
     <div className="App">
