@@ -2,6 +2,7 @@ body {
   border: 0;
   margin: 0;
   padding: 0;
+  height: 100vh;
   background-color: var(--primary-color);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -15,4 +16,9 @@ body {
   --secondary-color: #940A37;
   --third-color: #E26241;
   --accent-color: #5B0909;
+}
+
+#root {
+  height: 100vh;
+  background-color: var(--primary-color);
 }
