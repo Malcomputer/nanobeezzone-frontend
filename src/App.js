@@ -9,10 +9,10 @@ import "semantic-ui-css/semantic.min.css";
 
 function App({ theme }) {
   const history = useHistory();
-  const { currentUser } = useStore();
+  const { auth } = useStore();
   useEffect(() => {
     document.body.className = theme;
-    if (!currentUser) history.push("/login");
+    if (!auth) history.push("/login");
   });
   return (
     <div className="App">
