@@ -1,0 +1,12 @@
+.ui.header {
+    color: var(--accent-color);
+}
+
+.ui.button {
+    color: white;
+    background-color: var(--accent-color);
+}
+
+.ui.grid.login-form {
+    height: 100%;
+}
