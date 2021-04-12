@@ -1,8 +1,8 @@
 import "./DeleteUsersButton.scss";
 import React, { useState } from "react";
 import { Button, Modal } from "antd";
-import { useStore, LOGOUT } from "../../store/store";
-import { deleteUser } from "../../fetchRequests";
+import { useStore, LOGOUT } from "../store/index";
+import { deleteUser } from "../Api";
 
 function DeleteUserButton(props) {
   const user = useStore((state) => state.user);

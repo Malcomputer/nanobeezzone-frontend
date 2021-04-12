@@ -1,9 +1,9 @@
 import "./UserInfoCard.scss";
 import React, { useEffect } from "react";
 import { Card, Spin, Collapse, Divider } from "antd";
-// import { useStore } from "../../store/store";
-// import { getUserInfo, getUserPicture } from "../../fetchRequests";
-// import { GET_USER_INFO, GET_PROFILE_PICTURE } from "../store/store";
+import { useStore } from "../store/index";
+import { getUserInfo, getUserPicture } from "../Api";
+import { GET_USER_INFO, GET_PROFILE_PICTURE } from "../store/index";
 import UploadPictureForm from "./UploadPictureForm";
 import DeleteUserButton from "./DeleteUserButton";
 import placeholder from "../assets/images/Placeholder.png";

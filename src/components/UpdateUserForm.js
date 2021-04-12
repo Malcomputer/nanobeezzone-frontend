@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Input, Button } from "antd";
-// import { useStore, GET_USER_INFO } from "../../store/store";
-// import { getUserInfo, updateRequest } from "../../fetchRequests";
+import { useStore, GET_USER_INFO } from "../store/index";
+import { getUserInfo, updateRequest } from "..Api/";
 
 function UpdateUserForm(props) {
   const [password, setPassword] = useState({ password: "" });

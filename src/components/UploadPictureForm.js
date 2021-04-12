@@ -1,8 +1,8 @@
 import "./UploadPictureForm.scss";
 import React, { useState } from "react";
 import { Input } from "antd";
-import { useStore, GET_PROFILE_PICTURE } from "../../store/store";
-// import { putUserPicture, getUserPicture } from "../../fetchRequests";
+import { useStore, GET_PROFILE_PICTURE } from "../store/index";
+import { putUserPicture, getUserPicture } from "../Api";
 
 function UploadPictureFom(props) {
   const user = useStore((state) => state.user);
