@@ -22,3 +22,14 @@ body {
   height: 100vh;
   background-color: var(--primary-color);
 }
+
+button {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+:focus {
+  outline: 0;
+}
