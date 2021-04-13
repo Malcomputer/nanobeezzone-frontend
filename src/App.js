@@ -8,17 +8,18 @@ import Signup from "./views/Signup";
 
 function App({theme}) {
   const history = useHistory();
-  const {auth} = useStore();
+  const {auth, currentUser} = useStore();
   useEffect(() => {
     document.body.className = theme;
     if (!auth) history.push('/login');
+    console.log(currentUser);
   });
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/" component={Main} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
+        <Route path="/" component={Main} />
       </Switch>
     </div>
   );

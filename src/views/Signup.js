@@ -1,14 +1,19 @@
 import "../assets/signup.css";
 import logo from '../images/logo.png';
-import React, {useState} from "react";
-import {Button, Form, Grid, Header, Icon, Message, Segment} from "semantic-ui-react";
+import React, {useEffect, useState} from "react";
+import {Button, Form, Grid, Header, Message, Segment} from "semantic-ui-react";
 import {Link, useHistory} from "react-router-dom";
 import {signUpRequest} from "../Api";
+import {ACTIONS} from "../store";
 
 function Signup() {
 	const history = useHistory();
 	const [userInput, setUserInput] = useState({});
 	const [errors, setErrors] = useState([]);
+
+	useEffect(() => {
+		if (localStorage.getItem(ACTIONS.TOKEN)) history.push('/');
+	});
 
 	const displayErrors = (errors) => errors.map((error, i) => <p key={i}>{error.message}</p>);
 
