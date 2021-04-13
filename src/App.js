@@ -20,6 +20,7 @@ function App({ theme }) {
         <Route exact path="/" component={Main} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
+          <SOS />
       </Switch>
     </div>
   );
