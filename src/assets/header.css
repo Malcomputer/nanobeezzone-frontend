@@ -1,0 +1,21 @@
+#header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+}
+
+#user-info > * {
+    color: white;
+}
+
+#user-info > #name {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+#user-info > #username {
+    text-transform: lowercase;
+}

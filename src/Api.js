@@ -28,14 +28,14 @@ export const deleteUser = (token, username) => {
 
 export const getUserInfo = (username) => {
 	console.log(username);
-	return fetch(baseURL + `users/${username}`)
+	return fetch(baseURL/`users/${username}`)
 		.then((res) => res.json())
 
 		.catch((error) => console.log(error));
 };
 
 export const getUserPicture = (username, timestamp) => {
-	return fetch(baseURL + "users/" + username + "/picture" + "?t=" + timestamp, {
+	return fetch(baseURL + `"/users/" + username + "/picture" + "?t=" + timestamp`, {
 		method: "GET",
 		headers: {
 			"Content-Type": "image/png",
@@ -47,7 +47,7 @@ export const putUserPicture = (token, username, image) => {
 	let imageFormData = new FormData();
 	imageFormData.append("picture", image);
 
-	return fetch(baseURL + "users/" + username + "/picture", {
+	return fetch(baseURL + `/users/${username} + "/picture"`, {
 		method: "PUT",
 		headers: {
 			Authorization: "Bearer " + token,
@@ -57,7 +57,7 @@ export const putUserPicture = (token, username, image) => {
 };
 
 export const updateRequest = (token, username, newUserInfo) => {
-	return fetch(baseURL + `users/${username}`, {
+	return fetch(baseURL + `/users/${username}`, {
 		method: "PATCH",
 		headers: {
 			"Content-Type": "application/json",
