@@ -5,6 +5,7 @@ import {useEffect} from "react";
 import Main from "./views/Main";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
+import SOS from "./views/sos";
 
 function App({theme}) {
   const history = useHistory();
@@ -19,7 +20,10 @@ function App({theme}) {
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
-        <Route path="/" component={Main} />
+        <Route exact path="/" component={Main} />
+        <Route>
+          <SOS />
+        </Route>
       </Switch>
     </div>
   );
