@@ -1,0 +1,9 @@
+#drawer {
+    width: 380px;
+    height: 100%;
+    background-color: var(--secondary-color);
+}
+
+#drawer-list {
+    list-style: none;
+}

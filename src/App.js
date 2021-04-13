@@ -6,21 +6,25 @@ import Main from "./views/Main";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
 import "semantic-ui-css/semantic.min.css";
+import SOS from "./views/SOS";
 
 function App({ theme }) {
   const history = useHistory();
-  const { auth } = useStore();
+  const { auth, currentUser } = useStore();
   useEffect(() => {
     document.body.className = theme;
     if (!auth) history.push("/login");
+    console.log(currentUser);
   });
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/" component={Main} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
+        <Route exact path="/" component={Main} />
+        <Route>
           <SOS />
+        </Route>
       </Switch>
     </div>
   );
