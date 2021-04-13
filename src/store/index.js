@@ -1,12 +1,13 @@
 import create from "zustand";
 import {devtools, redux} from "zustand/middleware";
 
+export const ACTIONS = {}
 const initialState = {
     user: { token: "" },
     messageObj: { messages: [], count: null, statusCode: null },
     userForProfile: null,
     profilePagePicture: {},
-    postedMessage: null,
+    // postedMessage: null,
   };
 
 export const LOGIN = "LOGIN";
