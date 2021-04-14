@@ -64,7 +64,7 @@ function Login() {
     <Grid textAlign="center" verticalAlign="middle" className="login-form">
       <Grid.Column style={{ maxWidth: 450 }}>
         <Header as="h1" icon textAlign="center">
-          <img src={logo} alt="NanobeezZone" />
+          <img src={logo} alt="NanoBeezZone" id="logo" />
           Login to NanoBeezZone
         </Header>
         <Form onSubmit={handleSubmit} size="large">
@@ -80,26 +80,6 @@ function Login() {
               className={handleInputError(errors, "username")}
               type="text"
             />
-	return (
-		<Grid textAlign="center" verticalAlign="middle" className="login-form">
-			<Grid.Column style={{maxWidth: 450}}>
-				<Header as="h1" icon textAlign="center">
-					<img src={logo} alt="NanoBeezZone" id="logo" />
-					Login to NanoBeezZone
-				</Header>
-				<Form onSubmit={handleSubmit} size="large">
-					<Segment stacked>
-						<Form.Input
-							fluid
-							name="username"
-							icon="user"
-							iconPosition="left"
-							placeholder="Username"
-							onChange={handleChange}
-							value={username}
-							className={handleInputError(errors, "username")}
-							type="text"
-						/>
 
             <Form.Input
               fluid

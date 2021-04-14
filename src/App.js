@@ -6,7 +6,7 @@ import Main from "./views/Main";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
 import "semantic-ui-css/semantic.min.css";
-import SOS from "./views/SOS";
+// import SOS from "./views/SOS";
 
 function App({ theme }) {
   const history = useHistory();
@@ -22,9 +22,9 @@ function App({ theme }) {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route exact path="/" component={Main} />
-        <Route>
+        {/* <Route>
           <SOS />
-        </Route>
+        </Route> */}
       </Switch>
     </div>
   );
