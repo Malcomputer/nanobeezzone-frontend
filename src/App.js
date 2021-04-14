@@ -22,10 +22,6 @@ function App({ theme }) {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route exact path="/" component={Main} />
-        {/* <Route>
-          <SOS />
-        </Route> */}
->>>>>>> 32e9f396ececa48b946a8b392527cd0caa6e8ca3
       </Switch>
     </div>
   );
