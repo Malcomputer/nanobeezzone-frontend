@@ -1,14 +1,17 @@
-import '../assets/header.css';
 import profilePlaceholder from '../images/profile-placeholder.png';
-import {useEffect, useState} from "react";
 import {GiHamburgerMenu} from 'react-icons/all';
+import {useLocation} from "react-router-dom";
+import {useEffect, useState} from "react";
 import {Drawer} from "@material-ui/core";
+import '../assets/header.css';
 
 function Header(props) {
+	const location = useLocation();
 	const [state, setState] = useState({showDrawer: false});
 	useEffect(() => {
-		// if (props.username) getUser(props.username);
-	});
+		// if (props.username) getUser(props.username); // not working yet
+		setState({showDrawer: false});
+	}, [location]);
 	const toggleDrawer = (drawerState) => {
 		setState(state => ({showDrawer: drawerState}))
 	}

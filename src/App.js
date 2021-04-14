@@ -20,10 +20,7 @@ function App({theme}) {
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
-        <Route exact path="/" component={Main} />
-        <Route>
-          <SOS />
-        </Route>
+        <Route path="/" component={Main} />
       </Switch>
     </div>
   );
