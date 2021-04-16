@@ -1,0 +1,15 @@
+#user {
+  margin: 10px 50px;
+  border-radius: 15px;
+  background-color: var(--third-color);
+}
+
+#user > #user-image {
+  width: 80px;
+  height: 80px;
+}
+
+#user > #user-name {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
