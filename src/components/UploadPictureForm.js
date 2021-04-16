@@ -1,7 +1,7 @@
 // import "./UploadPictureForm.scss";
 import React, { useState } from "react";
 import { Input } from "antd";
-import { useStore, GET_PROFILE_PICTURE } from "../store/index";
+import { useStore, ACTIONS } from "../store/index";
 import { putUserPicture, getUserPicture } from "../Api";
 
 function UploadPictureFom(props) {
@@ -19,7 +19,7 @@ function UploadPictureFom(props) {
           getUserPicture(props.match.params.username, Date.now()).then(
             (data) => {
               dispatch({
-                type: GET_PROFILE_PICTURE,
+                type: ACTIONS.GET_PROFILE_PICTURE,
                 payload: data.url,
               });
             }
