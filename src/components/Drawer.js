@@ -4,14 +4,14 @@ import {Link} from "react-router-dom";
 import { useStore } from '../store';
 
 function Drawer() {
-	const {currentUser} = useStore();
+	const {username, name, image} = useStore(state => state.currentUser);
 	return (
 		<div id="drawer">
-			<Header user={{username: currentUser.username, name: currentUser.name, image: ''}} />
+			<Header user={{username, name, image}} inDrawer />
 			<hr />
 			<ul id="drawer-list">
-				<li><Link to="chats">Chats</Link></li>
-				<li><Link to="settings">Settings</Link></li>
+				<li><Link to="/friends"><span>Add Friends</span></Link></li>
+				<li><Link to="/logout"><span>Logout</span></Link></li>
 			</ul>
 		</div>
 	)
