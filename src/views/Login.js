@@ -11,7 +11,7 @@ import {
 } from "semantic-ui-react";
 import { useEffect, useState } from "react";
 import { loginRequest } from "../Api";
-import { ACTIONS, useStore } from "../store";
+import { ACTIONS, useStore } from "../store/";
 
 function Login() {
   const history = useHistory();
