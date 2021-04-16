@@ -1,7 +1,7 @@
 // import "./DeleteUsersButton.scss";
 import React, { useState } from "react";
 import { Button, Modal } from "antd";
-import { useStore, LOGOUT } from "../store/index";
+import { useStore, ACTIONS } from "../store/index";
 import { deleteUser } from "../Api";
 
 function DeleteUserButton(props) {
@@ -17,7 +17,7 @@ function DeleteUserButton(props) {
     deleteUser(user.token, user.username).then((data) => {
       console.log(data);
       setShowModal(false)
-      dispatch({type: LOGOUT})
+      dispatch({type: ACTIONS.LOGOUT})
       props.history.push("/")
     });
   }
