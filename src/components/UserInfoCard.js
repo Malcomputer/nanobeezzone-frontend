@@ -1,4 +1,4 @@
-import "./UserInfoCard.scss";
+// import "./UserInfoCard.scss";
 import React, { useEffect } from "react";
 import { Card, Spin, Collapse, Divider } from "antd";
 import { useStore } from "../store/index";
@@ -6,13 +6,13 @@ import { getUserInfo, getUserPicture } from "../Api";
 import { GET_USER_INFO, GET_PROFILE_PICTURE } from "../store/index";
 import UploadPictureForm from "./UploadPictureForm";
 import DeleteUserButton from "./DeleteUserButton";
-import placeholder from "../assets/images/Placeholder.png";
+import placeholder from "../images/Placeholder.png";
 import UpdateUserForm from "./UpdateUserForm";
-import CollapsePanel from "antd/lib/collapse/CollapsePanel";
+
+// import CollapsePanel from "antd/lib/collapse/CollapsePanel";
 
 function UserInfoCard(props) {
-  const userProfile = useStore((state) => state.userForProfile);
-  const user = useStore((state) => state.user);
+  const currentUser = useStore((state) => state.currentUser);
   const profilePagePicture = useStore((state) => state.profilePagePicture);
   const dispatch = useStore((state) => state.dispatch);
 
@@ -57,17 +57,17 @@ function UserInfoCard(props) {
         }
       >
         <Card.Meta
-          title={userProfile ? userProfile.user.username : null}
-          description={userProfile ? userProfile.user.displayName : null}
+          title={currentUser ? currentUser.username : null}
+          description={currentUser ? currentUser.name : null}
         />
-        {userProfile ? (
-          userProfile.user.about ? (
-            <p>{userProfile.user.about}</p>
+        {currentUser ? (
+          currentUser.about ? (
+            <p>{currentUser.about}</p>
           ) : (
             <p>This User Hasn't Given Us Anything To Put Here!</p>
           )
         ) : null}
-        {props.match.params.username === user.username && (
+        {props.match.params.profile === currentUser.username && (
           <>
             <Divider orientation="left">User Settings</Divider>
             <Collapse>

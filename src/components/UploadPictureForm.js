@@ -1,4 +1,4 @@
-import "./UploadPictureForm.scss";
+// import "./UploadPictureForm.scss";
 import React, { useState } from "react";
 import { Input } from "antd";
 import { useStore, GET_PROFILE_PICTURE } from "../store/index";

@@ -1,4 +1,4 @@
-import "./DeleteUsersButton.scss";
+// import "./DeleteUsersButton.scss";
 import React, { useState } from "react";
 import { Button, Modal } from "antd";
 import { useStore, LOGOUT } from "../store/index";
