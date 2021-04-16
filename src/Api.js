@@ -1,4 +1,5 @@
-const baseURL = "https://nanobeezzone-backend.herokuapp.com";
+import {ACTIONS} from "./store";
+const baseURL = process.env.NODE_ENV === 'development' ? 'http://localhost:3001' : 'https://nanobeezzone-backend.herokuapp.com';
 
 export const signUpRequest = (username, name, password) => {
 	return fetch(`${baseURL}/signup`, {
@@ -66,3 +67,11 @@ export const updateRequest = (token, username, newUserInfo) => {
 		body: JSON.stringify(newUserInfo),
 	});
 };
+
+export const getUsers = () => {
+	return fetch(`${baseURL}/users`, {headers: {Authorization: `bearer ${localStorage.getItem(ACTIONS.TOKEN)}`}}).then(res => res.json());
+}
+
+export const getUser = (username) => {
+	return fetch(`${baseURL}/user/${username}`, {headers: {Authorization: `bearer ${localStorage.getItem(ACTIONS.TOKEN)}`}}).then(res => res.json());
+}

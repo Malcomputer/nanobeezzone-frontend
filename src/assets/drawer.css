@@ -5,5 +5,23 @@
 }
 
 #drawer-list {
+    padding: 0;
+    margin: 10px;
     list-style: none;
+}
+
+#drawer-list a {
+    font-weight: bold;
+    font-size: 1.3rem;
+    display: block;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: var(--third-color);
+}
+
+#drawer-list a > * {
+    /*height: 100%;*/
+    /*width: 100%;*/
+    color: black;
 }
