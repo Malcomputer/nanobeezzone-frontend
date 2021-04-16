@@ -1,5 +1,5 @@
 import {ACTIONS} from "./store";
-const baseURL = process.env.NODE_ENV === 'development' ? 'http://localhost:3001' : 'https://nanobeezzone-backend.herokuapp.com';
+const baseURL = 'https://nanobeezzone-backend.herokuapp.com';
 
 export const signUpRequest = (username, name, password) => {
 	return fetch(`${baseURL}/signup`, {
