@@ -33,3 +33,7 @@ button {
 :focus {
   outline: 0;
 }
+
+img {
+  object-fit: cover;
+}
