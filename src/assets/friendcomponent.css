@@ -1,4 +1,6 @@
 #user {
+  color: black;
+  display: block;
   margin: 10px 50px;
   border-radius: 15px;
   background-color: var(--third-color);
@@ -7,6 +9,8 @@
 #user > #user-image {
   width: 80px;
   height: 80px;
+  margin: 5px 10px;
+  border-radius: 45px;
 }
 
 #user > #user-name {
