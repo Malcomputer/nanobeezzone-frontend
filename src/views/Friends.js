@@ -8,7 +8,9 @@ function Friends() {
 		if (users.length < 1) getUsers().then(setUsers);
 	});
 	return (
-		users.map(user => <FriendComponent key={user._id} {...user} />)
+		<div id="user-list">
+			{users.map(user => <FriendComponent key={user._id} {...user} />)}
+		</div>
 	)
 }
 
