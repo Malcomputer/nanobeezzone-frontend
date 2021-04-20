@@ -11,11 +11,11 @@ function UpdateUserForm(props) {
   const dispatch = useStore((state) => state.dispatch);
   const user = useStore((state) => state.user);
 
-  //   const [formData, setFormData] = useState({
-  //     password: "",
-  //     about: "",
-  //     displayName: "",
-  //   });
+  // const [formData, setFormData] = useState({
+  //   password: "",
+  //   about: "",
+  //   displayName: "",
+  // });
 
   const handleUpdate = (event) => {
     //event.preventDefault();
@@ -32,7 +32,7 @@ function UpdateUserForm(props) {
 
     console.log(newUserInfo);
     updateRequest(user.token, user.username, newUserInfo).then((data) => {
-      console.log(data)
+      console.log(data);
       if (data.status === 200) {
         getUserInfo(user.username).then((data) =>
           dispatch({

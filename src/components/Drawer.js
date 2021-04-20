@@ -20,6 +20,11 @@ function Drawer() {
             <span>Logout</span>
           </Link>
         </li>
+        <li>
+          <Link to="./chat/Chat">
+            <span>Chat</span>
+          </Link>
+        </li>
       </ul>
     </div>
   );
