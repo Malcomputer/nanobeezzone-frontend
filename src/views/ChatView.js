@@ -1,24 +1,29 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import "../assets/chatview.css";
 import {IoSend} from "react-icons/all";
+import {getUser} from "../Api";
+import Header from "../components/Header";
 
 function ChatView(props) {
+	const [user, setUser] = useState({});
 	useEffect(() => {
-		console.log(props.match.params.profile);
+		if (Object.entries(user).length < 1) getUser(props.match.params.profile).then(setUser)
 	});
 	const expandTextArea = ({target}) => {
-		if (!target.nodeName === 'TEXTAREA') return
+		if (target.nodeName !== 'TEXTAREA') return
 		target.style.height = '1px';
 		target.style.height = `${target.scrollHeight+2}px`;
-		// console.log(target.scrollHeight);
 	}
 	return (
-		<div id="chat-view">
-			<div id="text-box">
-				<textarea id="chat-textbox" onKeyUp={expandTextArea} />
-				<div className="icon send"><IoSend /></div>
+		<>
+			<Header user={user} />
+			<div id="chat-view">
+				<div id="text-box">
+					<textarea id="chat-textbox" onKeyUp={expandTextArea} />
+					<div className="icon send"><IoSend /></div>
+				</div>
 			</div>
-		</div>
+		</>
 	)
 }
 

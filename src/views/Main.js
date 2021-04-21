@@ -16,7 +16,6 @@ function Main() {
 				<Header drawer={Drawer} user={{username, name, img}} />
 			</div>
 			<div id="content">
-				<Header />
 				<Switch>
 					{/*these renders on the next two routes will be replaced with components.*/}
 					<Route exact path="/" render={() => (<h1>Chats page</h1>)} />
