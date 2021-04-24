@@ -10,7 +10,7 @@ function Drawer() {
 			<Header user={{username, name, image}} inDrawer />
 			<hr />
 			<ul id="drawer-list">
-				<li><Link to="/profile"><span>Profile</span></Link></li>
+				<li><Link to="/"><span>Chats</span></Link></li>
 				<li><Link to="/friends"><span>Add Friends</span></Link></li>
 				<li><Link to="/logout"><span>Logout</span></Link></li>
 			</ul>
