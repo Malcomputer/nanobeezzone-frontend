@@ -8,7 +8,7 @@ function Logout() {
 		localStorage.removeItem(ACTIONS.TOKEN);
 		localStorage.removeItem(ACTIONS.CURRENTUSER);
 		history.push('/login');
-	}, []);
+	});
 	return (<></>)
 }
 

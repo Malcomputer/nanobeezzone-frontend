@@ -7,7 +7,7 @@ function Friends() {
 	const [users, setUsers] = useState([]);
 	useEffect(() => {
 		if (users.length < 1) getUsers().then(setUsers);
-	});
+	}, [users.length]);
 	return (
 		<>
 			<Header title="Find Friends" />

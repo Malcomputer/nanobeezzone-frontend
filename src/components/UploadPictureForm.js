@@ -6,7 +6,7 @@ import { putUserPicture, getUserPicture } from "../Api";
 
 function UploadPictureFom(props) {
   const user = useStore((state) => state.user);
-  const profilePagePicture = useStore((state) => state.profilePagePicture);
+  // const profilePagePicture = useStore((state) => state.profilePagePicture);
   const dispatch = useStore((state) => state.dispatch);
 
   const [imageFile, setImageFile] = useState(null);

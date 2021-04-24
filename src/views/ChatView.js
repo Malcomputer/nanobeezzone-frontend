@@ -8,7 +8,7 @@ function ChatView(props) {
 	const [user, setUser] = useState({});
 	useEffect(() => {
 		if (Object.entries(user).length < 1) getUser(props.match.params.profile).then(setUser)
-	});
+	}, [user, props.match.params.profile]);
 	const expandTextArea = ({target}) => {
 		if (target.nodeName !== 'TEXTAREA') return
 		target.style.height = '1px';

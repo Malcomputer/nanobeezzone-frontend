@@ -1,9 +1,8 @@
 import profilePlaceholder from '../images/profile-placeholder.png';
 import React, {useEffect, useState} from "react";
-import { Card, Spin, Collapse, Divider } from "antd";
+import { Card, Collapse, Divider } from "antd";
 import { useStore } from "../store/index";
-import {getUser, getUserInfo, getUserPicture} from "../Api";
-import { ACTIONS } from "../store/index";
+import {getUser} from "../Api";
 import UploadPictureForm from "./UploadPictureForm";
 import DeleteUserButton from "./DeleteUserButton";
 import UpdateUserForm from "./UpdateUserForm";
@@ -16,7 +15,7 @@ function UserInfoCard(props) {
   const [{username, name, about, img, error}, setState] = useState(currentUser);
   useEffect(() => {
     if (props.match.params.profile !== currentUser.username) getUser(props.match.params.profile).then(setState);
-  }, [props.match.params.profile]);
+  }, [currentUser.username, props.match.params.profile]);
   return (
     <>
       <Header title="Profile" />
