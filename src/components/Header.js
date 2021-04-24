@@ -16,6 +16,7 @@ function Header(props) {
 	return (
 		<div id='header'>
 			<div id="header-info">
+				{(!props.user && props.title) && <h1 style={{fontWeight: 'bold'}}>{props.title}</h1>}
 				{props.drawer && <button onClick={() => toggleDrawer(!state.showDrawer)}><GiHamburgerMenu style={{height: '32px', width: '32px'}} /></button>}
 				{props.drawer &&
 				<Drawer anchor="left" open={state.showDrawer} onClose={() => toggleDrawer(false)}>

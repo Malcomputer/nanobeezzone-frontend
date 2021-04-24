@@ -1,0 +1,53 @@
+#chat-view {
+    display: flex;
+    /*overflow: hidden;*/
+    height: calc(100% - 80px);
+    flex-direction: column-reverse;
+}
+
+.react-chat-container .react-chat-row {
+    height: 100%;
+}
+
+.react-chat-container .react-chat-viewerBox {
+    height: 100%;
+    border-width: 0;
+    background-color: transparent;
+}
+
+.react-chat-container .react-chat-inputBox  {
+    align-items: center;
+    background-color: var(--third-color);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .2);
+}
+
+.react-chat-container .react-chat-textarea {
+    resize: none;
+    height: 55px;
+    flex-grow: 1;
+    font-size: 1.5rem;
+    max-height: 200px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: transparent;
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, .2);
+}
+
+.react-chat-container .react-chat-textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.react-chat-container .react-chat-sendButton {
+    width: 42px;
+    height: 42px;
+    padding: 8px;
+    margin-left: 10px;
+    border-radius: 50%;
+    border-width: unset;
+    border-style: unset;
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, .2)!important;
+}
+
+.react-chat-container .react-chat-sendButton > svg {
+    transform: translateX(2px);
+}
