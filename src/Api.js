@@ -1,5 +1,5 @@
 import {ACTIONS} from "./store";
-const baseURL = 'https://nanobeezzone-backend.herokuapp.com';
+const baseURL = 'https://nanobeezzone.herokuapp.com';
 
 export const signUpRequest = (username, name, password) => {
 	return fetch(`${baseURL}/signup`, {
@@ -68,10 +68,30 @@ export const updateRequest = (token, username, newUserInfo) => {
 	});
 };
 
+export const getMessages = currentUser => {
+	return fetch(`${baseURL}/messages/${currentUser}`, {
+		headers: {Authorization: `bearer ${localStorage.getItem(ACTIONS.TOKEN)}`}
+	}).then(res => res.json());
+}
+
 export const getUsers = () => {
 	return fetch(`${baseURL}/users`, {headers: {Authorization: `bearer ${localStorage.getItem(ACTIONS.TOKEN)}`}}).then(res => res.json());
 }
 
 export const getUser = (username) => {
 	return fetch(`${baseURL}/user/${username}`, {headers: {Authorization: `bearer ${localStorage.getItem(ACTIONS.TOKEN)}`}}).then(res => res.json());
+}
+
+export const getMessage = (receiver, sender) => {
+	return fetch(`${baseURL}/message/${receiver}/${sender}`, {headers: {Authorization: `bearer ${localStorage.getItem(ACTIONS.TOKEN)}`}}).then(res => res.json());
+}
+
+export const sendMessage = newMessage => {
+	return fetch(`${baseURL}/message`, {
+		method: 'POST',
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: `bearer ${localStorage.getItem(ACTIONS.TOKEN)}`},
+		body: JSON.stringify({newMessage}),
+	}).then(res => res.json());
 }

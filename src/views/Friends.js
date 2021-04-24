@@ -12,7 +12,7 @@ function Friends() {
 		<>
 			<Header title="Find Friends" />
 			<div id="user-list">
-				{users.map(user => <FriendComponent key={user._id} {...user} />)}
+				{users.map(user => <FriendComponent key={user._id} user={user} />)}
 			</div>
 		</>
 	)
