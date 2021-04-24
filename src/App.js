@@ -6,6 +6,7 @@ import Main from "./views/Main";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
 import Logout from "./components/Logout";
+import Profile from "./views/Profile";
 
 function App({theme}) {
   const history = useHistory();
@@ -20,6 +21,7 @@ function App({theme}) {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/logout" component={Logout} />
+        <Route path="/profile/:username" component={Profile} />
         <Route path="/" component={Main} />
       </Switch>
     </div>
