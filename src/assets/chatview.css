@@ -1,0 +1,39 @@
+#chat-view {
+    display: flex;
+    height: calc(100% - 80px);
+    flex-direction: column-reverse;
+}
+
+#text-box {
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .2);
+}
+
+#chat-textbox {
+    resize: none;
+    height: 55px;
+    flex-grow: 1;
+    font-size: 1.5rem;
+    max-height: 200px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: transparent;
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, .2);
+}
+
+#chat-textbox::-webkit-scrollbar {
+    display: none;
+}
+
+.send {
+    padding: 8px;
+    margin-left: 10px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, .2);
+}
+
+.send > svg {
+    transform: translateX(2px);
+}
