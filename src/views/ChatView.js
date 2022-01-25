@@ -6,7 +6,7 @@ import ChatBox from "react-chat-plugin";
 import {useStore} from "../store";
 
 function ChatView(props) {
-	const {username, image} = useStore(state => state.currentUser);
+	const {currentUser: {username, image}, socket} = useStore();
 	const [user, setUser] = useState({});
 	const [messages, setMessages] = useState([]);
 	useEffect(() => {
@@ -29,6 +29,9 @@ function ChatView(props) {
 			textBoxElement.removeEventListener('keydown', expandTextArea);
 		}
 	}, [user, props.match.params.profile, messages.length, username]);
+	useEffect(() => {
+		if (socket) socket.on('send-message', instantMessage => setMessages(state => [...state, instantMessage]));
+	}, [socket]);
 	const expandTextArea = ({target}) => {
 		if (target.nodeName !== 'TEXTAREA') return
 		target.style.height = '1px';

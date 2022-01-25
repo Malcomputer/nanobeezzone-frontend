@@ -7,6 +7,7 @@ export const ACTIONS = {
 	CURRENTUSER: 'CURRENTUSER',
   REGISTER: 'REGISTER',
 	SETUSER: 'SETUSER',
+	SOCKET: 'SOCKET',
   LOGOUT: 'LOGOUT',
   LOGIN: 'LOGIN',
 	TOKEN: 'TOKEN'
@@ -36,6 +37,8 @@ const reducer = (state, action) => {
 			localStorage.setItem(ACTIONS.TOKEN, action.data.accessToken);
 			localStorage.setItem(ACTIONS.CURRENTUSER, JSON.stringify(action.data));
 			return {currentUser: action.data};
+		case ACTIONS.SOCKET:
+			return {socket: action.payload}
 		default:
 			return state;
 	}

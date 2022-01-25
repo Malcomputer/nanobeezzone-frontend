@@ -1,19 +1,27 @@
 import './assets/App.css';
 import {Switch, Route, useHistory} from 'react-router-dom';
-import {useStore} from './store';
+import {ACTIONS, useStore} from './store';
 import {useEffect} from "react";
 import Main from "./views/Main";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
 import Logout from "./components/Logout";
+import socketIOClient from "socket.io-client";
 
 function App({theme}) {
   const history = useHistory();
-  const {auth} = useStore();
+  const {auth, currentUser, dispatch} = useStore();
   useEffect(() => {
     document.body.className = theme;
     if (!auth) history.push('/login');
   });
+  useEffect(() => {
+    if (auth) {
+      const socket = socketIOClient("/");
+      socket.emit('active-user', currentUser.username);
+      dispatch({type: ACTIONS.SOCKET, payload: socket});
+    }
+  }, [currentUser])
   return (
     <div className="App">
       <Switch>
